@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caça-Palavras · Noite Estrelada</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- bolhas de fundo -->
+  <div class="bg-bubbles" aria-hidden="true">
+    <span class="bubble b1"></span>
+    <span class="bubble b2"></span>
+    <span class="bubble b3"></span>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <h1>Caça<span>Palavras</span></h1>
+      <p class="subtitle">encontre as palavras escondidas — inclusive nas diagonais e de trás pra frente</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-label">Tempo</span>
+        <span class="stat-value" id="timer">00:00</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Encontradas</span>
+        <span class="stat-value" id="score">0 / 0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Erros</span>
+        <span class="stat-value" id="errors">0</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <label class="select-wrap">
+        <span>Dificuldade</span>
+        <select id="difficulty">
+          <option value="10">Fácil · 10×10</option>
+          <option value="13" selected>Médio · 13×13</option>
+          <option value="16">Difícil · 16×16</option>
+        </select>
+      </label>
+      <button id="newGame" class="btn-primary">Novo jogo</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="Grade do caça-palavras"></div>
+      <p class="hint">Arraste o dedo/mouse sobre as letras — clique e arraste. Palavras podem estar invertidas e na diagonal.</p>
+    </section>
+
+    <aside class="panel">
+      <h2>Palavras</h2>
+      <ul id="wordList" class="word-list"></ul>
+
+      <div class="legend">
+        <h3>Como jogar</h3>
+        <ul>
+          <li><i class="dot d1"></i> Horizontal e vertical</li>
+          <li><i class="dot d2"></i> Diagonal (nos dois sentidos)</li>
+          <li><i class="dot d3"></i> De trás pra frente</li>
+        </ul>
+      </div>
+
+      <div id="message" class="message hidden"></div>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
